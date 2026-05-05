@@ -1,6 +1,6 @@
 package aula02_visibilidadeDeUmObjeto;
 
-public class ProgramAula03{
+public class ProgramAula02 {
     public static void main(String[] args) {
 
         Caneta c1 = new Caneta();

@@ -1,6 +1,6 @@
 package aula01_criandoClassesEObjetos;
 
-public class ProgramAula02 {
+public class ProgramAula01 {
     public static void main(String[] args) {
 
         Caneta c1 = new Caneta();

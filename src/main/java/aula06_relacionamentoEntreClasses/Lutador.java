@@ -1,6 +1,4 @@
-package aula07_relacionamentoEntreClasses;
-
-import javax.swing.*;
+package aula06_relacionamentoEntreClasses;
 
 public class Lutador {
     private String nome;
@@ -8,7 +6,6 @@ public class Lutador {
     private int idade;
     private double altura;
     private double peso;
-    private String categoria;
     private int vitorias;
     private int derrotas;
     private int empates;
@@ -67,14 +64,6 @@ public class Lutador {
         this.peso = peso;
     }
 
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
     public int getVitorias() {
         return vitorias;
     }
@@ -99,18 +88,33 @@ public class Lutador {
         this.empates = empates;
     }
 
-    @Override
-    public String toString() {
-        return "Lutador{" +
-                "nome='" + nome + '\'' +
-                ", nacionalidade='" + nacionalidade + '\'' +
-                ", idade=" + idade +
-                ", altura=" + altura +
-                ", peso=" + peso +
-                ", categoria='" + categoria + '\'' +
-                ", vitorias=" + vitorias +
-                ", derrotas=" + derrotas +
-                ", empates=" + empates +
-                '}';
+    public void categoria() {
+        if (getPeso() < 52) {
+            System.out.println("Não se enquadra em nenhuma categoria");
+        } else if (getPeso() <= 71) {
+            System.out.println("Categoria: Leve");
+        } else if (getPeso() <= 83) {
+            System.out.println("Categoria: Médio");
+        } else if (getPeso() <= 120) {
+            System.out.println("Categoria: Pesado");
+        }
+        else{
+            System.out.println("Não se enquadra em nenhuma categoria");
+        }
+
     }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Nome: " + getNome() + "\n");
+            sb.append("Nacionalidade: " + getNacionalidade() + "\n");
+            sb.append("Idade: " + getIdade() + "\n");
+            sb.append("Altura: " + getAltura() + "\n");
+            sb.append("Peso: " + getPeso() + "\n");
+            sb.append("Vitorias: " + getVitorias() + "\n");
+            sb.append("Derrotas: " + getDerrotas() + "\n");
+            sb.append("Empates: " + getEmpates() + "\n");
+            return sb.toString();
+    }
+
 }

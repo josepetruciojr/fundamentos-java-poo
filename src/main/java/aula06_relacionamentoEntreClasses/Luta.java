@@ -43,9 +43,9 @@ public class Luta {
     }
 
     public void marcarLuta(Lutador desafiado, Lutador desafiante){
-        if((desafiado.getCategoria() == desafiante.getCategoria())
-                && (desafiado.getNome() != desafiante.getNome())){
-            setAprovada(isAprovada());
+        if((desafiado.getCategoria().equals(desafiante.getCategoria()))
+                && (desafiado != desafiante)){
+            this.aprovada = true;
             this.desafiado = desafiado;
             this.desafiante = desafiante;
         }
@@ -61,7 +61,8 @@ public class Luta {
         if (isAprovada()) {
             desafiado.apresentar();
             desafiante.apresentar();
-            int vencedor = (int) Math.random() * 2;
+            Random numero = new Random();
+            int vencedor = numero.nextInt(3);
             switch (vencedor) {
                 case 0:
                     System.out.println("empatou");

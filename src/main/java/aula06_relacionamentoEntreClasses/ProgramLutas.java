@@ -7,7 +7,7 @@ public class ProgramLutas {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Lutador[] lutadores = new Lutador[1];
+        Lutador[] lutadores = new Lutador[2];
 
         for(int i = 0; i < lutadores.length; i++){
             System.out.print("Digite o nome: ");
@@ -26,6 +26,7 @@ public class ProgramLutas {
             int derrotas = sc.nextInt();
             System.out.print("Derrotas: ");
             int empates = sc.nextInt();
+            sc.nextLine();
 
             lutadores[i] = new Lutador(nome, nacionalidade, idade, altura, peso, vitorias, derrotas, empates);
         }
@@ -38,5 +39,9 @@ public class ProgramLutas {
             lut.status();
         }
     sc.close();
+        //testando o marcar luta, instanciando um obj
+        Luta luta = new Luta();
+        luta.marcarLuta(lutadores[0], lutadores[1]);
+        luta.lutar();
     }
 }
